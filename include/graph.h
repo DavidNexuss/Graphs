@@ -12,18 +12,18 @@ class Graph
     Graph();
     Graph(AdjacencyMatrix& adj_mat);
 
-    int addVertex(int v);
-    int removeVertex(int v);
+    int add_vertex(int v);
+    int remove_vertex(int v);
 
-    int addEdge(int a,int b);
-    int removeEdge(int a,int b);
+    int add_edge(int a,int b);
+    int remove_edge(int a,int b);
 
-    inline int getVertexCount() { return adjacency_map.size(); }
+    inline int get_vertex_count() { return adjacency_map.size(); }
 
     std::list<int>& operator[](int i);
     
-    AdjacencyMatrix* createAdjacencyMatrix();
+    AdjacencyMatrix* create_adjacency_matrix();
 
-    void writeGraph(bool simplify = false);
-    void readGraph();
+    void write_graph(bool simplify = false);
+    void read_graph();
 };

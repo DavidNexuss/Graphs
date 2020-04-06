@@ -6,7 +6,7 @@ int main()
 {
     int n; cin >> n;
     AdjacencyMatrix mat(n);
-    mat.readMatrix();
+    mat.read_matrix();
     Graph g(mat);
-    g.writeGraph();
+    g.write_graph();
 }

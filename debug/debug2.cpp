@@ -12,15 +12,15 @@ int main()
 {
     int n; cin >> n;
     AdjacencyMatrix mat(n);
-    mat.readMatrix();
+    mat.read_matrix();
     cout << "Current adjacency matrix: " << endl;
-    mat.writeMatrix();
+    mat.write_matrix();
     
     //TODO: Use stacks to automatate comprobations:
     int a,b;
     while (cin >> a >> b)
     {
         mat.swap_vertex(a, b);
-        mat.writeMatrix();
+        mat.write_matrix();
     }
 }

@@ -7,21 +7,21 @@ Graph::Graph() { }
 
 Graph::Graph(AdjacencyMatrix& adj_mat)
 {
-    int n = adj_mat.getSize();
+    int n = adj_mat.size();
     for (int i = 0; i < n; ++i)
     {
         for (int j = 0; j <= i; ++j)
         {
             if (adj_mat.get(i, j))
             {
-                addVertex(i);
-                addVertex(j);
-                addEdge(i, j);
+                add_vertex(i);
+                add_vertex(j);
+                add_edge(i, j);
             }
         }
     }
 }
-int Graph::addVertex(int v)
+int Graph::add_vertex(int v)
 {
     if (adjacency_map.count(v)) return 1;
 
@@ -29,14 +29,14 @@ int Graph::addVertex(int v)
     return 0;
 }
 
-int Graph::removeVertex(int v)
+int Graph::remove_vertex(int v)
 {
     if (adjacency_map.count(v) == 0) return 1;
     adjacency_map.erase(v);
     return 0;
 }
 
-int Graph::addEdge(int a,int b)
+int Graph::add_edge(int a,int b)
 {
     if (adjacency_map.count(a) == 0 or adjacency_map.count(b) == 0) return 1;
     adjacency_map[a].push_back(b);
@@ -44,7 +44,7 @@ int Graph::addEdge(int a,int b)
     return 0;
 }
 
-int Graph::removeEdge(int a, int b)
+int Graph::remove_edge(int a, int b)
 {
     if(adjacency_map.count(a) == 0 or adjacency_map.count(b) == 0) return 1;
     adjacency_map[a].remove(b);
@@ -52,7 +52,7 @@ int Graph::removeEdge(int a, int b)
     return 0;
 }
 
-void Graph::writeGraph(bool simplify)
+void Graph::write_graph(bool simplify)
 {
     for(auto& vertex_list_pair : adjacency_map)
     {
@@ -65,20 +65,20 @@ void Graph::writeGraph(bool simplify)
     }
 }
 
-void Graph::readGraph()
+void Graph::read_graph()
 {
     int a,b;
     while (cin >> a and a != -1 and cin >> b)
     {
-        addVertex(a);
-        addVertex(b);
+        add_vertex(a);
+        add_vertex(b);
         adjacency_map[a].push_back(b);
     }
 }
 
-AdjacencyMatrix* Graph::createAdjacencyMatrix()
+AdjacencyMatrix* Graph::create_adjacency_matrix()
 {
-    AdjacencyMatrix* adj_mat = new AdjacencyMatrix(getVertexCount());
+    AdjacencyMatrix* adj_mat = new AdjacencyMatrix(get_vertex_count());
 
     vector<vector<bool> >* _mat = adj_mat->get_matrix();
     for (auto& vertex_list_pair : adjacency_map)

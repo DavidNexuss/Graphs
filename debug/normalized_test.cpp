@@ -6,7 +6,7 @@ int main()
 {
     int n; cin >> n;
     AdjacencyMatrix mat(n);
-    mat.readMatrix();
+    mat.read_matrix();
     cout << n << endl;
-    mat.writeMatrix();
+    mat.write_matrix();
 }
