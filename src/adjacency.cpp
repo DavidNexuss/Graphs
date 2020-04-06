@@ -67,7 +67,7 @@ void AdjacencyMatrix::readMatrix(bool normalize)
         for (int j = 0; j < size; j++)
         {
             bool t; cin >> t;
-            mat[i][j] = t;
+            mat[i][j] = mat[i][j] || t;
             if (normalize) mat[j][i] = mat[j][i] || mat[i][j];
         }
     }
