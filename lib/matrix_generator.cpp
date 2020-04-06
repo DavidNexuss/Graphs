@@ -4,6 +4,7 @@
  * -n
  * -the matrix
  * the matrix is generated with random 0 and 1 with a specific probability
+ * the element aii for each i in 0 <= i < n is equal to 0
  */
 #include <iostream>
 #include <time.h>
@@ -30,7 +31,7 @@ int main(int argc, char* argv[])
     {
         for (int j = 0; j < n; j++)
         {
-            cout << (rand() % 10 > 7) << " ";
+            cout << (rand() % 10 > 7 and j != i) << " ";
         }
         cout << endl;
     }

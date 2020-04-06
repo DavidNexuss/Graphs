@@ -5,6 +5,22 @@ using namespace std;
 
 Graph::Graph() { }
 
+Graph::Graph(AdjacencyMatrix& adj_mat)
+{
+    int n = adj_mat.getSize();
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = 0; j <= i; ++j)
+        {
+            if (adj_mat.get(i, j))
+            {
+                addVertex(i);
+                addVertex(j);
+                addEdge(i, j);
+            }
+        }
+    }
+}
 int Graph::addVertex(int v)
 {
     if (adjacency_map.count(v)) return 1;
@@ -40,10 +56,12 @@ void Graph::writeGraph(bool simplify)
 {
     for(auto& vertex_list_pair : adjacency_map)
     {
+        cout << vertex_list_pair.first << " -> ";
         for(auto jt : vertex_list_pair.second)
         {
-            cout << vertex_list_pair.first << " " << jt << endl;
+            cout << jt << " ";
         }
+        cout << endl;
     }
 }
 

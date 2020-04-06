@@ -8,4 +8,6 @@ int main()
     AdjacencyMatrix mat(n);
     mat.readMatrix();
     mat.writeMatrix();
+    Graph g(mat);
+    g.writeGraph();
 }

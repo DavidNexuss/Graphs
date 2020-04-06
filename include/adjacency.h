@@ -15,6 +15,7 @@ class AdjacencyMatrix
 
     inline std::vector<std::vector<bool> >* get_matrix() { return &mat; }
     inline bool get(int a,int b) const { return mat[order_mask[a]][order_mask[b]]; }
+    inline int getSize() { return size; }
 
     void update_order_mask();
 

@@ -10,6 +10,7 @@ class Graph
     public:
 
     Graph();
+    Graph(AdjacencyMatrix& adj_mat);
 
     int addVertex(int v);
     int removeVertex(int v);
