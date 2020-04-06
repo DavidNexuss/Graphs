@@ -21,7 +21,10 @@ release: all
 all:  $(IDIR) $(ODIR) $(BIN) 				\
 								bin/bintree \
 								bin/matrix_generator\
-								bin/debug1
+								bin/adjacency_parser\
+								bin/normalized_test\
+								bin/debug1\
+								bin/debug2
 
 run: all
 	./$(OUT)

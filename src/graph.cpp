@@ -56,7 +56,7 @@ void Graph::writeGraph(bool simplify)
 {
     for(auto& vertex_list_pair : adjacency_map)
     {
-        cout << vertex_list_pair.first << " -> ";
+        cout << vertex_list_pair.first << " ";
         for(auto jt : vertex_list_pair.second)
         {
             cout << jt << " ";

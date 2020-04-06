@@ -1,0 +1,26 @@
+/* Test program to validate efficient method for swaping vertices in
+ * adjacency matrix
+ * Given a matrix and all the swapings that are desired, after all swapings,
+ * performing again all the swaps in reverse order should give the initial matrix.
+ */
+
+#include "graph.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n; cin >> n;
+    AdjacencyMatrix mat(n);
+    mat.readMatrix();
+    cout << "Current adjacency matrix: " << endl;
+    mat.writeMatrix();
+    
+    //TODO: Use stacks to automatate comprobations:
+    int a,b;
+    while (cin >> a >> b)
+    {
+        mat.swap_vertex(a, b);
+        mat.writeMatrix();
+    }
+}

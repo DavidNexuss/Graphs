@@ -6,7 +6,6 @@ using namespace std;
 AdjacencyMatrix::AdjacencyMatrix(int _size) : size(_size),
     mat(_size,vector<bool>(_size)),order_mask(_size)
 { 
-    cout << size << " "  << order_mask.size() << endl;
     for(int i=0;i<order_mask.size();i++)
     {
         order_mask[i] = i;

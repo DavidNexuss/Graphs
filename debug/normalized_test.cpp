@@ -7,6 +7,6 @@ int main()
     int n; cin >> n;
     AdjacencyMatrix mat(n);
     mat.readMatrix();
-    Graph g(mat);
-    g.writeGraph();
+    cout << n << endl;
+    mat.writeMatrix();
 }
