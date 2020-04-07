@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stack>
-#include <time.h>
+#include "rand.h"
 using namespace std;
 
 /*
@@ -136,7 +136,7 @@ void randomize(bool verbose)
     auto t = time(NULL);
     if (verbose)
         cout << "Using seed: " << t << endl;
-    srand(t);
+    srand(SEED);
 }
 int main(int argc, char* argv[])
 {

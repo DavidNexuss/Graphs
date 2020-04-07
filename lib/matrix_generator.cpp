@@ -7,7 +7,7 @@
  * the element aii for each i in 0 <= i < n is equal to 0
  */
 #include <iostream>
-#include <time.h>
+#include "rand.h"
 using namespace std;
 
 int number(char* str) //Utility function for converting char* to int, wont deal with unsupported conversions
@@ -22,7 +22,7 @@ int number(char* str) //Utility function for converting char* to int, wont deal 
 }
 int main(int argc, char* argv[])
 {
-    srand(time(NULL));
+    srand(SEED);
     int n = 5;
     if (argc > 1) n = number(argv[1]);
 
