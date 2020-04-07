@@ -1,3 +1,5 @@
 #pragma once
+#include <vector>
+
 template <typename T>
-void swap(T& a, T& b);
+void print_vector(const std::vector<T>& v,int n = -1);

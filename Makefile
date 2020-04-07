@@ -23,6 +23,8 @@ all:  $(IDIR) $(ODIR) $(BIN) 				\
 								bin/matrix_generator\
 								bin/adjacency_parser\
 								bin/normalized_test\
+								bin/isomorph\
+								bin/create_isomorph\
 								bin/debug1\
 								bin/debug2
 
