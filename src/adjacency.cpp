@@ -46,6 +46,18 @@ int AdjacencyMatrix::count_connected(int a)
     return sum;
 }
 
+int AdjacencyMatrix::edge_count()
+{
+    int c = 0;
+    for(int i = 1; i < size(); i++)
+    {
+        for(int j = 0; j < i; j++)
+        {
+            c+= mat[i][j];
+        }
+    }
+    return c;
+}
 void AdjacencyMatrix::write_matrix()
 {
     for(int i = 0; i < size();i++)

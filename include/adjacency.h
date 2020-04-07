@@ -23,6 +23,7 @@ class AdjacencyMatrix
     void swap_vertex(int a, int b);
     
     int count_connected(int a);
+    int edge_count();
 
     void write_matrix();
     void read_matrix(bool normalize = true);

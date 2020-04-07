@@ -22,10 +22,16 @@ bool same_matrix(AdjacencyMatrix& a, AdjacencyMatrix& b)
 
 bool basic_isomorph(AdjacencyMatrix& a,AdjacencyMatrix& b, int n)
 {
-    if (a.size() != b.size()) return false;
     if (same_matrix(a,b)) return true;
-
-    if (n == -1) n = a.size();
+                                                                    //First call case
+    if (n == -1)
+    {
+                                                                    //Preemptive algorithm to discard isomorphism given
+        if (a.size() != b.size()) return false;                     //diferent properties of the graphs
+        if (a.edge_count() != b.edge_count()) return false;
+                                                                    //TODO: Add more conditions to discard more cases
+        n = a.size();
+    }
     for (int i = 0; i < n; i++)
     {
         a.swap_vertex(i,n-1);
