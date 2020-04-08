@@ -23,7 +23,7 @@ bool preemptive_analysis(AdjacencyMatrix& a, AdjacencyMatrix& b)
 {
     return a.size() != b.size() || a.edge_count() != b.edge_count();
 }
-bool basic_isomorph(AdjacencyMatrix& a,AdjacencyMatrix& b, int n)
+bool basic_isomorph(AdjacencyMatrix& a,AdjacencyMatrix& b, int n,bool keep_solution)
 {
     if (same_matrix(a,b)) return true;
                                                                         //First call case
@@ -35,9 +35,23 @@ bool basic_isomorph(AdjacencyMatrix& a,AdjacencyMatrix& b, int n)
     for (int i = 0; i < n; i++)
     {
         a.swap_vertex(i,n-1);
-        bool iso = basic_isomorph(a,b,n-1);
+        bool iso = basic_isomorph(a,b,n-1,keep_solution);
+        if (keep_solution and iso) return true;
         a.swap_vertex(i,n-1);
         if (iso) return true;
     }
+    return false;
+}
+
+bool isomorph_map(AdjacencyMatrix& a, AdjacencyMatrix& b,vector<int>& map_function)
+{
+    a.copy_order_mask(map_function);
+
+    if (basic_isomorph(a,b,-1,true))
+    {
+        a.swap_order_mask(map_function);
+        return true;
+    }
+
     return false;
 }

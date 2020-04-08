@@ -24,6 +24,7 @@ all:  $(IDIR) $(ODIR) $(BIN) 				\
 								bin/adjacency_parser\
 								bin/normalized_test\
 								bin/isomorph\
+								bin/isomorph2\
 								bin/create_isomorph\
 								bin/debug1\
 								bin/debug2

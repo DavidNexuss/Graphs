@@ -20,11 +20,14 @@ class AdjacencyMatrix
 
     void update_order_mask();   //TODO: Need to initialize order_mask with an especific vertex order???
 
+    void copy_order_mask(std::vector<int>& vector);
+    void swap_order_mask(std::vector<int>& p_order_mask);
     void swap_vertex(int a, int b);
     
     int count_connected(int a);
     int edge_count();
 
     void write_matrix();
+    void write_order_mask();
     void read_matrix(bool normalize = true);
 };

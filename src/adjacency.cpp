@@ -35,7 +35,14 @@ void AdjacencyMatrix::swap_vertex(int a,int b)
     order_mask[a] = order_mask[b];
     order_mask[b] = t;
 }
-
+void AdjacencyMatrix::copy_order_mask(vector<int>& p_order_mask)
+{
+    p_order_mask = order_mask;
+}
+void AdjacencyMatrix::swap_order_mask(vector<int>& p_order_mask)
+{
+    p_order_mask.swap(order_mask);
+}
 int AdjacencyMatrix::count_connected(int a)
 {
     int sum = 0;
@@ -70,6 +77,14 @@ void AdjacencyMatrix::write_matrix()
     }
 }
 
+void AdjacencyMatrix::write_order_mask()
+{
+    for(int i = 0; i < size(); i++)
+    {
+        cout << order_mask[i] << " ";
+    }
+    cout << endl;
+}
 void AdjacencyMatrix::read_matrix(bool normalize)
 {
     for (int i = 0; i < size(); i++)
