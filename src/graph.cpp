@@ -21,6 +21,15 @@ Graph::Graph(AdjacencyMatrix& adj_mat)
         }
     }
 }
+int Graph::size()
+{
+    int n = adjacency_map.size();
+    for(auto& vertex_list_pair : adjacency_map)
+    {
+        n += vertex_list_pair.second.size();
+    }
+    return n;
+}
 int Graph::add_vertex(int v)
 {
     if (adjacency_map.count(v)) return 1;
@@ -52,10 +61,16 @@ int Graph::remove_edge(int a, int b)
     return 0;
 }
 
+list<int>& Graph::get_vertex_list(int v)
+{
+    return adjacency_map[v];
+}
 void Graph::write_graph(bool simplify)
 {
+    cout << adjacency_map.size() << endl;
     for(auto& vertex_list_pair : adjacency_map)
     {
+        cout << vertex_list_pair.second.size() << endl;
         cout << vertex_list_pair.first << " ";
         for(auto jt : vertex_list_pair.second)
         {
@@ -67,12 +82,21 @@ void Graph::write_graph(bool simplify)
 
 void Graph::read_graph()
 {
-    int a,b;
-    while (cin >> a and a != -1 and cin >> b)
+    int N;
+    cin >> N;
+    for(int i = 0; i < N; ++i)
     {
-        add_vertex(a);
-        add_vertex(b);
-        adjacency_map[a].push_back(b);
+        int M,v;
+        cin >> M;
+        cin >> v;
+        add_vertex(v);
+        for(int j = 0; j < M; ++j)
+        {
+            int t;
+            cin >> t;
+            add_vertex(t);
+            adjacency_map[v].push_back(t);
+        }
     }
 }
 

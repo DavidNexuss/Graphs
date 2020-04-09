@@ -12,6 +12,8 @@ class Graph
     Graph();
     Graph(AdjacencyMatrix& adj_mat);
 
+    int size();
+
     int add_vertex(int v);
     int remove_vertex(int v);
 
@@ -20,7 +22,8 @@ class Graph
 
     inline int get_vertex_count() { return adjacency_map.size(); }
 
-    std::list<int>& operator[](int i);
+    std::list<int>& get_vertex_list(int i);
+    std::list<int>& operator[](int i) { return get_vertex_list(i);}
     
     AdjacencyMatrix* create_adjacency_matrix();
 

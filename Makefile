@@ -25,9 +25,12 @@ all:  $(IDIR) $(ODIR) $(BIN) 				\
 								bin/normalized_test\
 								bin/isomorph\
 								bin/isomorph2\
+								bin/graph_parser\
 								bin/create_isomorph\
 								bin/debug1\
-								bin/debug2
+								bin/debug2\
+								bin/debug3\
+								bin/debug4
 
 run: all
 	./$(OUT)
